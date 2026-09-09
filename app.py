@@ -120,9 +120,9 @@ def file(pid,filename):
     if not session.get("admin"): return redirect(url_for("login"))
     return send_from_directory(UPLOAD_DIR/str(pid),secure_filename(filename),as_attachment=False)
 
-@app.route("/robots.txt")
-def robots():
-    return make_response(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n",200,{"Content-Type":"text/plain"})
+@app.route("/google4a4df61860a1960.html")
+def google_verification():
+    return send_from_directory(BASE,"google4a4df61860.html")
 
 @app.route("/sitemap.xml")
 def sitemap():
