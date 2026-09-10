@@ -122,7 +122,7 @@ def file(pid,filename):
 
 @app.route("/google4a4df61860a1960.html")
 def google_verification():
-    return send_from_directory(BASE,"google4a4df61860.html")
+    return "google-site-verification: google4a4df61860a1960.html", 200, {"Content-Type": "text/plain"}
 
 @app.route("/sitemap.xml")
 def sitemap():
