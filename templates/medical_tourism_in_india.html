@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="{{ 'ar' if lang == 'ar' else 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if lang == 'ar' %}
+    <title>السياحة العلاجية في الهند | Nooraniyat Healthcare</title>
+    <meta name="description" content="خدمات تنسيق السياحة العلاجية في الهند للمرضى الدوليين، بما في ذلك تنسيق المستشفيات والأطباء والاستشارات والتأشيرة والسفر الطبي.">
+    <link rel="canonical" href="{{ site_url }}/medical-tourism-in-india?lang=ar">
+    {% else %}
+    <title>Medical Tourism in India for International Patients | Nooraniyat Healthcare</title>
+    <meta name="description" content="Medical tourism in India for international patients. Nooraniyat Healthcare helps coordinate hospitals, specialist consultations, treatment planning, medical visa and travel support.">
+    <link rel="canonical" href="{{ site_url }}/medical-tourism-in-india?lang=en">
+    {% endif %}
+
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="{{ site_url }}/medical-tourism-in-india?lang=en">
+    <link rel="alternate" hreflang="ar" href="{{ site_url }}/medical-tourism-in-india?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="{{ site_url }}/medical-tourism-in-india?lang=en">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site_url }}/medical-tourism-in-india?lang={{ lang }}">
+    <meta property="og:site_name" content="Nooraniyat Healthcare">
+
+    {% if lang == 'ar' %}
+    <meta property="og:title" content="السياحة العلاجية في الهند | Nooraniyat Healthcare">
+    <meta property="og:description" content="تنسيق الرعاية الطبية والسفر العلاجي في الهند للمرضى الدوليين.">
+    {% else %}
+    <meta property="og:title" content="Medical Tourism in India | Nooraniyat Healthcare">
+    <meta property="og:description" content="Healthcare coordination and medical travel support in India for international patients.">
+    {% endif %}
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #222;
+            background: #f7f9fb;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0b5d68, #123f59);
+            color: white;
+            padding: 65px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 18px;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+        }
+
+        header p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .btns {
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            margin: 6px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #0b5d68;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #123f59;
+        }
+
+        h3 {
+            color: #123f59;
+        }
+
+        .intro,
+        .content-box {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,.06);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,.06);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            background: white;
+            padding: 22px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.05);
+        }
+
+        .faq {
+            background: white;
+            padding: 22px;
+            margin: 14px 0;
+            border-radius: 12px;
+        }
+
+        .faq h3 {
+            margin-top: 0;
+        }
+
+        .cta {
+            text-align: center;
+            background: #eaf5f6;
+            border-radius: 16px;
+            padding: 40px 25px;
+        }
+
+        footer {
+            background: #123f59;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 45px 15px;
+            }
+
+            section {
+                padding: 35px 0;
+            }
+
+            .intro,
+            .content-box,
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Medical Tourism in India for International Patients",
+      "url": "{{ site_url }}/medical-tourism-in-india?lang={{ lang }}",
+      "description": "Medical tourism coordination and healthcare support in India for international patients.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nooraniyat Healthcare"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        {% if lang == 'ar' %}
+        <h1>السياحة العلاجية في الهند للمرضى الدوليين</h1>
+        <p>
+            دعم وتنسيق الرعاية الصحية للمرضى القادمين إلى الهند للعلاج،
+            مع المساعدة في اختيار المستشفى والاستشارات الطبية والسفر والتأشيرة.
+        </p>
+        {% else %}
+        <h1>Medical Tourism in India for International Patients</h1>
+        <p>
+            Professional healthcare coordination and medical travel support
+            for international patients seeking treatment in India.
+        </p>
+        {% endif %}
+
+        <div class="btns">
+            <a class="btn" href="{{ url_for('home', lang=lang) }}#enquiry">
+                {% if lang == 'ar' %}ابدأ طلب العلاج{% else %}Start Your Treatment Enquiry{% endif %}
+            </a>
+
+            <a class="btn" href="https://wa.me/{{ wa1 }}">
+                {% if lang == 'ar' %}تواصل عبر واتساب{% else %}Contact on WhatsApp{% endif %}
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section>
+    <div class="container">
+        {% if lang == 'ar' %}
+        <div class="intro">
+            <h2>السياحة العلاجية في الهند</h2>
+            <p>
+                أصبحت الهند وجهة مهمة للمرضى الدوليين الذين يبحثون عن خدمات
+                طبية متخصصة وخيارات علاجية متنوعة. تساعد Nooraniyat Healthcare
+                المرضى في تنسيق رحلتهم العلاجية والتواصل مع المستشفيات
+                والأطباء المناسبين حسب احتياجاتهم الطبية.
+            </p>
+            <p>
+                Nooraniyat Healthcare هي جهة لتنسيق ودعم الرعاية الصحية وليست
+                بديلاً عن الطبيب أو المستشفى.
+            </p>
+        </div>
+        {% else %}
+        <div class="intro">
+            <h2>Medical Tourism in India</h2>
+            <p>
+                India is an important destination for international patients
+                looking for specialized medical care and a wide range of
+                treatment options. Nooraniyat Healthcare helps patients
+                coordinate their medical journey and connect with suitable
+                hospitals and specialists according to their healthcare needs.
+            </p>
+            <p>
+                Nooraniyat Healthcare works as a healthcare coordination and
+                support service and does not replace doctors or hospitals.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>
+            {% if lang == 'ar' %}
+            أنواع العلاج والخدمات الطبية
+            {% else %}
+            Medical Treatments and Healthcare Services
+            {% endif %}
+        </h2>
+
+        <div class="grid">
+
+            {% set services_en = [
+                ("Cancer Treatment", "Support for oncology consultations, treatment planning and coordination with relevant specialists."),
+                ("Heart & Cardiology", "Coordination for cardiac consultations, diagnostics and treatment planning."),
+                ("Orthopedic Treatment", "Support for joint, knee, hip, spine and orthopedic treatment enquiries."),
+                ("Kidney & Urology", "Coordination for kidney, urology and related specialist consultations."),
+                ("Neurology & Neurosurgery", "Support for neurological and neurosurgical consultations and treatment planning."),
+                ("Liver & Gastroenterology", "Coordination for liver, digestive and gastroenterology-related care."),
+                ("IVF & Fertility", "Support for fertility and reproductive healthcare enquiries."),
+                ("Organ Transplant", "Coordination support for eligible transplant-related enquiries and specialist evaluation."),
+                ("Pediatric Care", "Support for medical and surgical care enquiries involving children."),
+                ("Dental & Eye Care", "Coordination for dental, ophthalmology and related specialist services."),
+                ("Robotic & Minimally Invasive Surgery", "Support for enquiries involving advanced surgical approaches where clinically appropriate."),
+                ("Diagnostics & Second Opinion", "Medical report review coordination, specialist consultation and second-opinion support.")
+            ] %}
+
+            {% set services_ar = [
+                ("علاج السرطان والأورام", "تنسيق الاستشارات وخطط العلاج مع المتخصصين المناسبين."),
+                ("أمراض القلب", "تنسيق استشارات القلب والفحوصات وخطط العلاج."),
+                ("العظام والمفاصل", "دعم طلبات علاج الركبة والورك والعمود الفقري والعظام."),
+                ("الكلى والمسالك البولية", "تنسيق الاستشارات المتعلقة بالكلى والمسالك البولية."),
+                ("الأعصاب وجراحة الأعصاب", "دعم الاستشارات العصبية وجراحة الأعصاب وخطط العلاج."),
+                ("الكبد والجهاز الهضمي", "تنسيق الرعاية المتعلقة بالكبد والجهاز الهضمي."),
+                ("أطفال وحديثو الولادة", "دعم طلبات الرعاية الطبية والجراحية للأطفال."),
+                ("أطفال الأنابيب والخصوبة", "دعم طلبات علاج الخصوبة والصحة الإنجابية."),
+                ("زراعة الأعضاء", "تنسيق طلبات تقييم زراعة الأعضاء مع المتخصصين."),
+                ("الأسنان والعيون", "تنسيق خدمات طب الأسنان وطب العيون."),
+                ("الجراحة الروبوتية", "دعم الاستفسارات المتعلقة بالأساليب الجراحية المتقدمة."),
+                ("التشخيص والرأي الطبي الثاني", "تنسيق مراجعة التقارير والاستشارات الطبية والرأي الثاني.")
+            ] %}
+
+            {% if lang == 'ar' %}
+                {% for title, text in services_ar %}
+                <div class="card">
+                    <h3>{{ title }}</h3>
+                    <p>{{ text }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                {% for title, text in services_en %}
+                <div class="card">
+                    <h3>{{ title }}</h3>
+                    <p>{{ text }}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="content-box">
+            <h2>
+                {% if lang == 'ar' %}
+                خدمات المرضى الدوليين
+                {% else %}
+                International Patient Services
+                {% endif %}
+            </h2>
+
+            {% if lang == 'ar' %}
+            <ul>
+                <li>مراجعة التقارير الطبية والاستفسارات الأولية.</li>
+                <li>تنسيق استشارات الأطباء والمتخصصين.</li>
+                <li>المساعدة في التواصل مع المستشفيات المناسبة.</li>
+                <li>تنسيق خطط العلاج والمواعيد.</li>
+                <li>دعم إجراءات القبول والاستشفاء عند الحاجة.</li>
+                <li>المساعدة في التأشيرة الطبية والسفر.</li>
+                <li>المساعدة في الإقامة والنقل حسب الحاجة.</li>
+                <li>دعم المرضى أثناء رحلتهم العلاجية.</li>
+            </ul>
+            {% else %}
+            <ul>
+                <li>Initial medical report review and enquiry support.</li>
+                <li>Coordination of specialist consultations.</li>
+                <li>Assistance in connecting with suitable hospitals.</li>
+                <li>Treatment planning and appointment coordination.</li>
+                <li>Support with admission coordination when required.</li>
+                <li>Medical visa and medical travel assistance.</li>
+                <li>Accommodation and transportation support when required.</li>
+                <li>Dedicated assistance during the medical journey.</li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="content-box">
+            <h2>
+                {% if lang == 'ar' %}
+                تكلفة العلاج والسفر الطبي في الهند
+                {% else %}
+                Medical Treatment Cost and Medical Travel in India
+                {% endif %}
+            </h2>
+
+            {% if lang == 'ar' %}
+            <p>
+                تختلف تكلفة العلاج في الهند حسب التشخيص ونوع العلاج والمستشفى
+                والطبيب والفحوصات ومدة الإقامة والحالة الطبية للمريض.
+                لذلك لا يمكن تحديد سعر واحد لجميع المرضى.
+            </p>
+            <p>
+                يمكن للمرضى إرسال تقاريرهم الطبية للحصول على توجيه أولي
+                وتنسيق الاستشارة المناسبة.
+            </p>
+            {% else %}
+            <p>
+                Medical treatment costs in India vary depending on the
+                diagnosis, procedure, hospital, specialist, investigations,
+                length of stay and individual medical condition.
+                There is no single treatment price that applies to every patient.
+            </p>
+            <p>
+                International patients can send their medical reports for
+                initial guidance and coordination of an appropriate specialist
+                consultation.
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="content-box">
+            <h2>
+                {% if lang == 'ar' %}
+                التأشيرة الطبية والسفر إلى الهند
+                {% else %}
+                Medical Visa and Travel Assistance for India
+                {% endif %}
+            </h2>
+
+            {% if lang == 'ar' %}
+            <p>
+                يمكننا المساعدة في تنسيق خدمات السفر الطبي، بما في ذلك
+                التوجيه المتعلق بالتأشيرة الطبية، المستندات، المواعيد،
+                الإقامة والنقل حسب احتياجات المريض.
+            </p>
+            {% else %}
+            <p>
+                We can assist with medical travel coordination, including
+                guidance related to medical visa requirements, documentation,
+                appointments, accommodation and transportation according to
+                the patient's needs.
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>
+            {% if lang == 'ar' %}
+            كيف تبدأ رحلتك العلاجية؟
+            {% else %}
+            How to Start Your Medical Treatment Journey
+            {% endif %}
+        </h2>
+
+        <div class="steps">
+
+            {% if lang == 'ar' %}
+
+            <div class="step">
+                <h3>1. إرسال التقارير الطبية</h3>
+                <p>أرسل التقارير والوصفات الطبية المتوفرة لدينا للمراجعة والتنسيق.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. تنسيق الاستشارة</h3>
+                <p>نساعد في تنسيق التواصل مع الطبيب أو المستشفى المناسب.</p>
+            </div>
+
+            <div class="step">
+                <h3>3. خطة العلاج والتكلفة</h3>
+                <p>بعد التقييم الطبي، يمكن تنسيق المعلومات المتعلقة بخطة العلاج والتكاليف المقدرة من الجهة الطبية.</p>
+            </div>
+
+            <div class="step">
+                <h3>4. السفر والمتابعة</h3>
+                <p>نساعد في تنسيق المواعيد والسفر والخدمات المطلوبة للمريض الدولي.</p>
+            </div>
+
+            {% else %}
+
+            <div class="step">
+                <h3>1. Send Medical Reports</h3>
+                <p>Share your available medical reports and prescriptions for review and coordination.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Coordinate a Consultation</h3>
+                <p>We help coordinate communication with a suitable doctor or hospital.</p>
+            </div>
+
+            <div class="step">
+                <h3>3. Treatment Plan and Estimate</h3>
+                <p>After medical evaluation, treatment information and estimated costs can be coordinated with the medical provider.</p>
+            </div>
+
+            <div class="step">
+                <h3>4. Medical Travel and Support</h3>
+                <p>We help coordinate appointments, travel and required support for international patients.</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>FAQ</h2>
+
+        {% if lang == 'ar' %}
+
+        <div class="faq">
+            <h3>هل يمكن للمرضى الدوليين الحصول على العلاج في الهند؟</h3>
+            <p>نعم، يمكن للمرضى الدوليين التواصل مع المستشفيات ومقدمي الرعاية الصحية في الهند وفقاً لحالتهم الطبية ومتطلبات التأشيرة.</p>
+        </div>
+
+        <div class="faq">
+            <h3>كم تكلفة العلاج في الهند؟</h3>
+            <p>تختلف التكلفة حسب الحالة والعلاج والمستشفى والطبيب والفحوصات ومدة الإقامة.</p>
+        </div>
+
+        <div class="faq">
+            <h3>هل يمكنني إرسال تقاريري الطبية؟</h3>
+            <p>نعم، يمكن إرسال التقارير الطبية من خلال نموذج الاستفسار للحصول على المساعدة في تنسيق الاستشارة.</p>
+        </div>
+
+        <div class="faq">
+            <h3>هل تقدمون المساعدة في التأشيرة الطبية؟</h3>
+            <p>نعم، نقدم دعم وتنسيق خدمات السفر والتأشيرة الطبية حسب احتياجات المريض والمتطلبات الرسمية.</p>
+        </div>
+
+        <div class="faq">
+            <h3>هل Nooraniyat Healthcare مستشفى؟</h3>
+            <p>Nooraniyat Healthcare هي خدمة لتنسيق ودعم الرعاية الصحية ومساعدة المرضى في التواصل مع المستشفيات والأطباء.</p>
+        </div>
+
+        {% else %}
+
+        <div class="faq">
+            <h3>Can international patients receive treatment in India?</h3>
+            <p>Yes. International patients can contact hospitals and healthcare providers in India according to their medical needs and applicable visa requirements.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How much does medical treatment in India cost?</h3>
+            <p>Costs vary according to the condition, treatment, hospital, specialist, investigations and length of stay.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Can I send my medical reports?</h3>
+            <p>Yes. Medical reports can be submitted through the enquiry form for assistance with consultation coordination.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Do you provide medical visa assistance?</h3>
+            <p>We provide medical travel and visa coordination support according to the patient's needs and applicable official requirements.</p>
+        </div>
+
+        <div class="faq">
+            <h3>Is Nooraniyat Healthcare a hospital?</h3>
+            <p>No. Nooraniyat Healthcare is a healthcare coordination and support service that helps patients connect with hospitals and specialists.</p>
+        </div>
+
+        {% endif %}
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="cta">
+            {% if lang == 'ar' %}
+            <h2>ابدأ استفسارك الطبي</h2>
+            <p>أرسل تقاريرك الطبية ودعنا نساعدك في تنسيق الخطوات التالية.</p>
+            <a class="btn" href="{{ url_for('home', lang='ar') }}#enquiry">إرسال استفسار</a>
+            {% else %}
+            <h2>Start Your Medical Enquiry</h2>
+            <p>Send your medical reports and let us help coordinate the next steps.</p>
+            <a class="btn" href="{{ url_for('home', lang='en') }}#enquiry">Send Enquiry</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© Nooraniyat Healthcare</p>
+    <p>
+        <a href="{{ url_for('home', lang=lang) }}">Home</a>
+        <a href="{{ url_for('medical_treatment_india', lang=lang) }}">Medical Treatment in India</a>
+    </p>
+</footer>
+
+</body>
+</html>
