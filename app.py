@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
 ADMIN_USER = os.environ.get("ADMIN_USER", "admin")
 ADMIN_PASS = os.environ.get("ADMIN_PASS", "change-me-123")
-SITE_URL = os.environ.get("SITE_URL", "https://example.com").rstrip("/")
+SITE_URL = "https://web-production-01e26.up.railway.app"
 
 ALLOWED = {"pdf", "jpg", "jpeg", "png", "webp"}
 app.config["MAX_CONTENT_LENGTH"] = 25 * 1024 * 1024
