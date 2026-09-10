@@ -85,6 +85,10 @@ def home():
         con.commit(); con.close()
         return render_template("success.html", name=name, lang=language)
     return render_template("home.html", lang=language)
+@app.route("/medical-treatment-in-india")
+def medical_treatment_india():
+    language = get_lang()
+    return render_template("medical_treatment_india.html", lang=language)
 
 @app.route("/admin/login", methods=["GET","POST"])
 def login():
@@ -128,7 +132,11 @@ def google_verification():
 def sitemap():
     xml = '<?xml version="1.0" encoding="UTF-8"?>'
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-    xml += f"<url><loc>{SITE_URL}/?lang=en</loc></url><url><loc>{SITE_URL}/?lang=ar</loc></url></urlset>"
+    xml += f"<url><loc>{SITE_URL}/?lang=en</loc></url>"
+    xml += f"<url><loc>{SITE_URL}/?lang=ar</loc></url>"
+    xml += f"<url><loc>{SITE_URL}/medical-treatment-in-india?lang=en</loc></url>"
+    xml += f"<url><loc>{SITE_URL}/medical-treatment-in-india?lang=ar</loc></url>"
+    xml += "</urlset>"
     return make_response(xml,200,{"Content-Type":"application/xml"})
 
 @app.errorhandler(413)

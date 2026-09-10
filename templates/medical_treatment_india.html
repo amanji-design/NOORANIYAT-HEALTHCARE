@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="{{ 'ar' if lang == 'ar' else 'en' }}"
+      dir="{{ 'rtl' if lang == 'ar' else 'ltr' }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if lang == 'ar' %}
+    <title>العلاج الطبي في الهند | نورانيات للرعاية الصحية</title>
+    <meta name="description" content="نورانيات للرعاية الصحية تساعد المرضى الدوليين في تنسيق العلاج الطبي في الهند، مراجعة التقارير الطبية، تنسيق الأطباء والمستشفيات، والاستشارات والدعم الطبي والسفر والتأشيرة.">
+    <link rel="canonical" href="{{ site_url }}/medical-treatment-in-india?lang=ar">
+    {% else %}
+    <title>Medical Treatment in India | NOORANIYAT Healthcare</title>
+    <meta name="description" content="NOORANIYAT Healthcare helps international patients coordinate medical treatment in India, review medical reports, connect with hospitals and specialists, arrange consultations, and receive medical travel and visa support.">
+    <link rel="canonical" href="{{ site_url }}/medical-treatment-in-india?lang=en">
+    {% endif %}
+
+    <link rel="alternate" hreflang="en" href="{{ site_url }}/medical-treatment-in-india?lang=en">
+    <link rel="alternate" hreflang="ar" href="{{ site_url }}/medical-treatment-in-india?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="{{ site_url }}/medical-treatment-in-india?lang=en">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NOORANIYAT Healthcare">
+
+    {% if lang == 'ar' %}
+    <meta property="og:title" content="العلاج الطبي في الهند | نورانيات للرعاية الصحية">
+    <meta property="og:description" content="تنسيق العلاج والرعاية الصحية للمرضى الدوليين في الهند.">
+    {% else %}
+    <meta property="og:title" content="Medical Treatment in India | NOORANIYAT Healthcare">
+    <meta property="og:description" content="Medical treatment coordination and healthcare support in India for international patients.">
+    {% endif %}
+
+    <meta name="robots" content="index, follow">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #183b56;
+            background: #f7fbfd;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .seo-page {
+            width: 100%;
+        }
+
+        .seo-topbar {
+            background: #073b4c;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .seo-nav {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .seo-logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #087f8c;
+        }
+
+        .seo-nav-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .seo-nav-links a {
+            color: #183b56;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .language-btn {
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: #e8f7f8;
+            color: #087f8c !important;
+        }
+
+        .seo-hero {
+            background: linear-gradient(135deg, #e9f8fa, #ffffff);
+            padding: 75px 7%;
+            text-align: center;
+        }
+
+        .seo-hero h1 {
+            margin: 0 auto 20px;
+            max-width: 950px;
+            font-size: clamp(32px, 5vw, 58px);
+            line-height: 1.15;
+            color: #063b4c;
+        }
+
+        .seo-hero p {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: #506575;
+        }
+
+        .seo-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .seo-btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .seo-btn-primary {
+            background: #087f8c;
+            color: white;
+        }
+
+        .seo-btn-secondary {
+            background: white;
+            color: #087f8c;
+            border: 2px solid #087f8c;
+        }
+
+        .seo-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .seo-section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .seo-section-title h2 {
+            font-size: 34px;
+            color: #073b4c;
+            margin-bottom: 10px;
+        }
+
+        .seo-section-title p {
+            max-width: 800px;
+            margin: auto;
+            color: #627482;
+        }
+
+        .seo-intro {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .seo-intro h2 {
+            color: #073b4c;
+            margin-top: 0;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .seo-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            border: 1px solid #e8f0f3;
+        }
+
+        .seo-card h3 {
+            color: #087f8c;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .seo-card p {
+            color: #60717d;
+            margin-bottom: 0;
+        }
+
+        .seo-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .seo-list li {
+            background: white;
+            margin-bottom: 12px;
+            padding: 15px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #087f8c;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+        }
+
+        [dir="rtl"] .seo-list li {
+            border-left: none;
+            border-right: 4px solid #087f8c;
+        }
+
+        .seo-process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-box {
+            background: white;
+            text-align: center;
+            padding: 25px 18px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .process-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #087f8c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-weight: 800;
+        }
+
+        .cost-box {
+            background: #073b4c;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .cost-box h2 {
+            margin-top: 0;
+            color: white;
+        }
+
+        .cost-box p {
+            color: #e4f0f4;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            margin: 0 0 8px;
+            color: #073b4c;
+            font-size: 18px;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #627482;
+        }
+
+        .seo-final-cta {
+            background: linear-gradient(135deg, #087f8c, #073b4c);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .seo-final-cta h2 {
+            color: white;
+            font-size: 34px;
+            margin-top: 0;
+        }
+
+        .seo-final-cta p {
+            max-width: 750px;
+            margin: 0 auto 25px;
+            color: #eaf7f8;
+        }
+
+        .seo-final-cta .seo-btn {
+            background: white;
+            color: #087f8c;
+        }
+
+        .seo-footer {
+            text-align: center;
+            background: #052f3c;
+            color: #d5e7eb;
+            padding: 25px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .seo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .seo-process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .seo-nav {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .seo-grid,
+            .seo-process {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-hero {
+                padding: 55px 20px;
+            }
+
+            .seo-intro,
+            .cost-box {
+                padding: 25px 20px;
+            }
+
+            .seo-section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{% if lang == 'ar' %}العلاج الطبي في الهند{% else %}Medical Treatment in India{% endif %}",
+        "url": "{{ site_url }}/medical-treatment-in-india?lang={{ lang }}",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "NOORANIYAT Healthcare",
+            "url": "{{ site_url }}"
+        },
+        "about": {
+            "@type": "MedicalBusiness",
+            "name": "NOORANIYAT Healthcare"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="seo-page">
+
+    <div class="seo-topbar">
+        {% if lang == 'ar' %}
+            تنسيق الرعاية الصحية والدعم للمرضى المحليين والدوليين في الهند
+        {% else %}
+            Medical treatment coordination and healthcare support for domestic and international patients in India
+        {% endif %}
+    </div>
+
+    <nav class="seo-nav">
+        <a href="{{ url_for('home', lang=lang) }}" class="seo-logo">
+            NOORANIYAT Healthcare
+        </a>
+
+        <div class="seo-nav-links">
+            <a href="{{ url_for('home', lang=lang) }}">
+                {% if lang == 'ar' %}الرئيسية{% else %}Home{% endif %}
+            </a>
+
+            <a href="{{ url_for('home', lang=lang) }}#about">
+                {% if lang == 'ar' %}من نحن{% else %}About{% endif %}
+            </a>
+
+            <a href="{{ url_for('home', lang=lang) }}#specialties">
+                {% if lang == 'ar' %}التخصصات{% else %}Specialties{% endif %}
+            </a>
+
+            <a href="{{ url_for('home', lang=lang) }}#enquiry">
+                {% if lang == 'ar' %}استفسار طبي{% else %}Medical Enquiry{% endif %}
+            </a>
+
+            {% if lang == 'ar' %}
+            <a class="language-btn" href="{{ url_for('medical_treatment_india', lang='en') }}">
+                English
+            </a>
+            {% else %}
+            <a class="language-btn" href="{{ url_for('medical_treatment_india', lang='ar') }}">
+                العربية
+            </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="seo-hero">
+        {% if lang == 'ar' %}
+
+        <h1>العلاج الطبي في الهند للمرضى الدوليين</h1>
+
+        <p>
+            تساعد نورانيات للرعاية الصحية المرضى الدوليين في استكشاف خيارات
+            العلاج الطبي في الهند وتنظيم رحلة الرعاية الصحية بطريقة واضحة ومنظمة.
+        </p>
+
+        <div class="seo-buttons">
+            <a class="seo-btn seo-btn-primary"
+               href="{{ url_for('home', lang='ar') }}#enquiry">
+                إرسال استفسار طبي
+            </a>
+
+            <a class="seo-btn seo-btn-secondary"
+               href="https://wa.me/{{ wa1 }}">
+                تواصل عبر واتساب
+            </a>
+        </div>
+
+        {% else %}
+
+        <h1>Medical Treatment in India for International Patients</h1>
+
+        <p>
+            NOORANIYAT Healthcare helps patients from India and around the world
+            explore medical treatment options in India and coordinate their
+            healthcare journey in a clear and organized way.
+        </p>
+
+        <div class="seo-buttons">
+            <a class="seo-btn seo-btn-primary"
+               href="{{ url_for('home', lang='en') }}#enquiry">
+                Submit Medical Enquiry
+            </a>
+
+            <a class="seo-btn seo-btn-secondary"
+               href="https://wa.me/{{ wa1 }}">
+                Contact on WhatsApp
+            </a>
+        </div>
+
+        {% endif %}
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="seo-container">
+
+        {% if lang == 'ar' %}
+
+        <div class="seo-section-title">
+            <h2>العلاج والرعاية الصحية في الهند</h2>
+            <p>
+                دعم منظم للمرضى الذين يبحثون عن خيارات الرعاية الصحية والعلاج في الهند.
+            </p>
+        </div>
+
+        <div class="seo-intro">
+            <h2>كيف تساعد نورانيات المرضى؟</h2>
+
+            <p>
+                تساعد NOORANIYAT Healthcare المرضى على فهم خيارات العلاج في الهند
+                والتواصل مع المستشفيات والأطباء والمتخصصين المناسبين حسب احتياجاتهم.
+            </p>
+
+            <p>
+                يمكن أن تشمل المساعدة مراجعة التقارير الطبية، تنسيق الاستشارات،
+                التواصل مع مقدمي الرعاية الصحية، المساعدة في التخطيط للعلاج،
+                ودعم إجراءات السفر الطبي والتأشيرة.
+            </p>
+
+            <p>
+                نورانيات ليست بديلاً عن الطبيب أو المستشفى. القرارات الطبية
+                والتشخيص والعلاج يتم تحديدها من قبل المتخصصين الطبيين المؤهلين.
+            </p>
+        </div>
+
+        {% else %}
+
+        <div class="seo-section-title">
+            <h2>Healthcare and Medical Treatment in India</h2>
+            <p>
+                Organized support for patients looking for healthcare and treatment
+                options in India.
+            </p>
+        </div>
+
+        <div class="seo-intro">
+            <h2>How NOORANIYAT Healthcare Helps Patients</h2>
+
+            <p>
+                NOORANIYAT Healthcare helps patients understand available medical
+                care options in India and coordinate communication with hospitals,
+                doctors and specialists according to their healthcare needs.
+            </p>
+
+            <p>
+                Support may include medical report review, specialist consultation
+                coordination, communication with healthcare providers, treatment
+                planning assistance, medical travel guidance and visa assistance.
+            </p>
+
+            <p>
+                NOORANIYAT Healthcare does not replace doctors or hospitals.
+                Diagnosis and treatment decisions are made by qualified healthcare
+                professionals.
+            </p>
+        </div>
+
+        {% endif %}
+    </section>
+
+
+    <!-- TREATMENTS -->
+    <section class="seo-container">
+
+        <div class="seo-section-title">
+            {% if lang == 'ar' %}
+            <h2>التخصصات والعلاجات الطبية</h2>
+            <p>
+                يمكننا المساعدة في تنسيق الاستشارات والوصول إلى مقدمي الرعاية
+                الصحية في مجموعة واسعة من التخصصات.
+            </p>
+            {% else %}
+            <h2>Medical Treatments and Specialties in India</h2>
+            <p>
+                We can help coordinate consultations and access to healthcare
+                providers across a wide range of specialties.
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="seo-grid">
+
+            {% if lang == 'ar' %}
+
+            <div class="seo-card">
+                <h3>علاج السرطان والأورام</h3>
+                <p>الأورام الطبية والجراحية والعلاج الإشعاعي والعلاجات الموجهة والمناعية حسب تقييم الطبيب.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>أمراض القلب</h3>
+                <p>تنسيق استشارات أمراض القلب وجراحات القلب والإجراءات القلبية حسب الحالة الطبية.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>العظام والمفاصل</h3>
+                <p>المساعدة في تنسيق علاج المفاصل والركبة والورك والعمود الفقري وإصابات العظام.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الكلى والمسالك البولية</h3>
+                <p>تنسيق الاستشارات في أمراض الكلى والمسالك البولية وزراعة الكلى عند الحاجة.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الأعصاب وجراحة المخ والعمود الفقري</h3>
+                <p>المساعدة في الوصول إلى أطباء الأعصاب وجراحة المخ والعمود الفقري.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الكبد والجهاز الهضمي</h3>
+                <p>تنسيق استشارات أمراض الكبد والجهاز الهضمي والإجراءات ذات الصلة.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الخصوبة وأطفال الأنابيب</h3>
+                <p>المساعدة في تنسيق استشارات الخصوبة وأطفال الأنابيب وخيارات الصحة الإنجابية.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>زراعة الأعضاء</h3>
+                <p>تنسيق التواصل والاستشارات المتعلقة بزراعة الأعضاء حسب الأهلية الطبية والقانونية.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>طب الأطفال</h3>
+                <p>المساعدة في تنسيق الرعاية والاستشارات الطبية للأطفال والحالات المتخصصة.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>طب الأسنان والعيون</h3>
+                <p>تنسيق الاستشارات وخيارات العلاج في طب الأسنان وطب العيون.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الجراحة الروبوتية</h3>
+                <p>المساعدة في الوصول إلى المراكز والأطباء الذين يقدمون الإجراءات الجراحية المتقدمة حسب الحالة.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>الفحوصات والتشخيص</h3>
+                <p>تنسيق الفحوصات والاستشارات التشخيصية والرأي الطبي الثاني.</p>
+            </div>
+
+            {% else %}
+
+            <div class="seo-card">
+                <h3>Cancer & Oncology Treatment</h3>
+                <p>Coordination for medical oncology, surgical oncology, radiation therapy, targeted therapy and immunotherapy as advised by specialists.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Heart & Cardiology</h3>
+                <p>Coordination for cardiology consultations, cardiac surgery and cardiac procedures according to the patient's medical condition.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Orthopedic & Joint Treatment</h3>
+                <p>Support with consultations for knee, hip, shoulder, spine, sports injuries and other orthopedic conditions.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Kidney & Urology</h3>
+                <p>Coordination for kidney, urology and related specialist consultations, including transplant evaluation where appropriate.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Neurology & Neurosurgery</h3>
+                <p>Support in coordinating neurology, neurosurgery, brain and spine specialist consultations.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Liver & Gastroenterology</h3>
+                <p>Coordination for liver, gastroenterology and digestive health consultations and related procedures.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>IVF & Fertility Treatment</h3>
+                <p>Support for fertility consultations, IVF coordination and reproductive healthcare options.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Organ Transplant</h3>
+                <p>Coordination for transplant-related consultations subject to medical eligibility and applicable regulations.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Pediatric Treatment</h3>
+                <p>Support for pediatric consultations, specialist care and treatment coordination for children.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Dental & Eye Care</h3>
+                <p>Coordination for dental, ophthalmology and related specialist consultations.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Robotic & Minimally Invasive Surgery</h3>
+                <p>Help connecting patients with specialists and centers offering advanced surgical approaches when medically appropriate.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Diagnostics & Second Opinion</h3>
+                <p>Medical report review, diagnostic coordination and second-opinion support for patients seeking another medical assessment.</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </section>
+
+
+    <!-- INTERNATIONAL PATIENTS -->
+    <section class="seo-container">
+
+        <div class="seo-section-title">
+            {% if lang == 'ar' %}
+            <h2>خدمات المرضى الدوليين في الهند</h2>
+            <p>
+                دعم المرضى القادمين من دول مختلفة للحصول على الرعاية الصحية في الهند.
+            </p>
+            {% else %}
+            <h2>International Patient Services in India</h2>
+            <p>
+                Support for patients travelling from different countries to seek
+                healthcare in India.
+            </p>
+            {% endif %}
+        </div>
+
+        <ul class="seo-list">
+
+            {% if lang == 'ar' %}
+
+            <li>مراجعة التقارير الطبية والمعلومات الصحية المتاحة.</li>
+            <li>المساعدة في تنسيق استشارة الطبيب أو المتخصص.</li>
+            <li>المساعدة في التواصل مع المستشفيات ومقدمي الرعاية الصحية.</li>
+            <li>تنسيق المواعيد وخطط الزيارة الطبية.</li>
+            <li>المساعدة في فهم متطلبات السفر الطبي والتأشيرة.</li>
+            <li>دعم التواصل والمساعدة اللغوية للمرضى الدوليين.</li>
+            <li>المساعدة في تنظيم رحلة الرعاية الصحية من الاستشارة إلى السفر.</li>
+
+            {% else %}
+
+            <li>Medical report review and assessment of the information provided by the patient.</li>
+            <li>Specialist and doctor consultation coordination.</li>
+            <li>Communication and coordination with hospitals and healthcare providers.</li>
+            <li>Appointment and medical visit coordination.</li>
+            <li>Medical travel and visa assistance.</li>
+            <li>Language communication and patient support for international visitors.</li>
+            <li>Organized healthcare journey support from consultation through travel planning.</li>
+
+            {% endif %}
+
+        </ul>
+    </section>
+
+
+    <!-- COST -->
+    <section class="seo-container">
+
+        <div class="cost-box">
+
+            {% if lang == 'ar' %}
+
+            <h2>تكلفة العلاج الطبي في الهند</h2>
+
+            <p>
+                تختلف تكلفة العلاج في الهند حسب التشخيص، نوع الإجراء أو الجراحة،
+                المستشفى، الطبيب، مدة الإقامة، الفحوصات المطلوبة والحالة الطبية
+                لكل مريض.
+            </p>
+
+            <p>
+                لذلك لا يمكن إعطاء سعر موحد لجميع المرضى. يمكن إرسال التقارير
+                الطبية والمعلومات الأساسية للحصول على توجيه أولي وتنسيق تقدير
+                طبي عند توفر المعلومات اللازمة.
+            </p>
+
+            {% else %}
+
+            <h2>Medical Treatment Cost in India</h2>
+
+            <p>
+                The cost of medical treatment in India varies depending on the
+                diagnosis, procedure or surgery, hospital, specialist, required
+                investigations, length of stay and individual medical condition.
+            </p>
+
+            <p>
+                There is no single treatment price that applies to every patient.
+                Patients can submit their medical reports and basic details so that
+                the information can be reviewed and an appropriate estimate or
+                treatment coordination can be explored where possible.
+            </p>
+
+            {% endif %}
+
+        </div>
+    </section>
+
+
+    <!-- MEDICAL VISA -->
+    <section class="seo-container">
+
+        <div class="seo-section-title">
+            {% if lang == 'ar' %}
+            <h2>التأشيرة والسفر الطبي إلى الهند</h2>
+            <p>
+                دعم إضافي للمرضى الذين يحتاجون إلى تنظيم رحلة علاجية إلى الهند.
+            </p>
+            {% else %}
+            <h2>Medical Visa & Medical Travel to India</h2>
+            <p>
+                Additional support for patients planning a medical journey to India.
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="seo-grid">
+
+            {% if lang == 'ar' %}
+
+            <div class="seo-card">
+                <h3>المساعدة في التأشيرة</h3>
+                <p>معلومات ودعم في خطوات وإجراءات التأشيرة الطبية حسب المتطلبات المعمول بها.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>تنظيم السفر</h3>
+                <p>المساعدة في تنسيق الجوانب المتعلقة بالرحلة الطبية والوصول إلى الهند.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>المساعدة أثناء الرحلة</h3>
+                <p>دعم المرضى في التواصل والتنظيم أثناء رحلة الرعاية الصحية حسب الحاجة.</p>
+            </div>
+
+            {% else %}
+
+            <div class="seo-card">
+                <h3>Visa Assistance</h3>
+                <p>Guidance and support with medical visa-related steps and documentation requirements.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Medical Travel Planning</h3>
+                <p>Support with coordinating the healthcare-related aspects of travelling to India.</p>
+            </div>
+
+            <div class="seo-card">
+                <h3>Patient Journey Support</h3>
+                <p>Communication and coordination support during the medical travel journey as needed.</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="seo-container">
+
+        <div class="seo-section-title">
+            {% if lang == 'ar' %}
+            <h2>كيف تبدأ رحلة العلاج؟</h2>
+            <p>خطوات بسيطة لبدء طلبك الطبي.</p>
+            {% else %}
+            <h2>How to Start Your Medical Treatment Journey</h2>
+            <p>A simple process to begin your medical enquiry.</p>
+            {% endif %}
+        </div>
+
+        <div class="seo-process">
+
+            <div class="process-box">
+                <div class="process-number">1</div>
+                <h3>
+                    {% if lang == 'ar' %}إرسال التقارير{% else %}Send Reports{% endif %}
+                </h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    أرسل التقارير والمعلومات الطبية المتاحة.
+                    {% else %}
+                    Submit your available medical reports and basic details.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="process-box">
+                <div class="process-number">2</div>
+                <h3>
+                    {% if lang == 'ar' %}مراجعة المعلومات{% else %}Review{% endif %}
+                </h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    يتم تنظيم المعلومات لفهم احتياجاتك الطبية.
+                    {% else %}
+                    Your information is organized to understand your healthcare needs.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="process-box">
+                <div class="process-number">3</div>
+                <h3>
+                    {% if lang == 'ar' %}تنسيق الاستشارة{% else %}Coordination{% endif %}
+                </h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في تنسيق التواصل والاستشارة المناسبة.
+                    {% else %}
+                    Help coordinating communication and an appropriate consultation.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="process-box">
+                <div class="process-number">4</div>
+                <h3>
+                    {% if lang == 'ar' %}التخطيط{% else %}Plan{% endif %}
+                </h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في تنظيم الخطوات التالية في رحلة العلاج.
+                    {% else %}
+                    Support with organizing the next steps of your healthcare journey.
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="seo-container">
+
+        <div class="seo-section-title">
+            {% if lang == 'ar' %}
+            <h2>الأسئلة الشائعة حول العلاج في الهند</h2>
+            {% else %}
+            <h2>Frequently Asked Questions About Medical Treatment in India</h2>
+            {% endif %}
+        </div>
+
+
+        {% if lang == 'ar' %}
+
+        <div class="faq-item">
+            <h3>هل يمكن للمرضى من خارج الهند الحصول على العلاج في الهند؟</h3>
+            <p>
+                نعم، يمكن للمرضى الدوليين استكشاف خيارات العلاج في الهند وفقاً
+                لحالتهم الطبية ومتطلبات السفر والتأشيرة المعمول بها.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>كم تكلفة العلاج الطبي في الهند؟</h3>
+            <p>
+                تختلف التكلفة حسب الحالة والإجراء والمستشفى والطبيب والفحوصات
+                ومدة الإقامة. لذلك يجب تقييم الحالة قبل إعطاء تقدير مناسب.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>هل تساعدون في مراجعة التقارير الطبية؟</h3>
+            <p>
+                نعم، يمكن إرسال التقارير الطبية للمساعدة في تنظيم المعلومات
+                وتنسيق الرأي أو الاستشارة الطبية المناسبة.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>هل تقدمون المساعدة في التأشيرة الطبية؟</h3>
+            <p>
+                نعم، تقدم نورانيات مساعدة ومعلومات تتعلق بالسفر الطبي والتأشيرة
+                وفقاً للمتطلبات والإجراءات المعمول بها.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>هل نورانيات مستشفى؟</h3>
+            <p>
+                لا. نورانيات للرعاية الصحية هي جهة لتنسيق ودعم رحلة الرعاية الصحية،
+                وليست بديلاً عن المستشفى أو الطبيب.
+            </p>
+        </div>
+
+        {% else %}
+
+        <div class="faq-item">
+            <h3>Can international patients receive medical treatment in India?</h3>
+            <p>
+                Yes. International patients can explore treatment options in India
+                depending on their medical condition and applicable travel and visa requirements.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How much does medical treatment cost in India?</h3>
+            <p>
+                Treatment costs vary by condition, procedure, hospital, specialist,
+                investigations and length of stay. A suitable estimate requires
+                understanding the patient's individual requirements.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I send my medical reports for review?</h3>
+            <p>
+                Yes. Patients can submit available reports and medical information
+                to help organize the case and coordinate an appropriate consultation
+                or second opinion.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you provide medical visa assistance?</h3>
+            <p>
+                NOORANIYAT Healthcare provides medical travel and visa-related
+                assistance and guidance according to applicable requirements.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is NOORANIYAT Healthcare a hospital?</h3>
+            <p>
+                No. NOORANIYAT Healthcare provides healthcare coordination and
+                patient support. It does not replace a hospital or qualified doctor.
+            </p>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="seo-final-cta">
+
+        {% if lang == 'ar' %}
+
+        <h2>هل تبحث عن العلاج في الهند؟</h2>
+
+        <p>
+            أرسل معلوماتك وتقاريرك الطبية، وسنساعدك في تنظيم طلبك الطبي
+            والخطوات التالية في رحلة الرعاية الصحية.
+        </p>
+
+        <a class="seo-btn"
+           href="{{ url_for('home', lang='ar') }}#enquiry">
+            إرسال استفسار طبي
+        </a>
+
+        {% else %}
+
+        <h2>Looking for Medical Treatment in India?</h2>
+
+        <p>
+            Submit your medical details and available reports. We can help organize
+            your enquiry and guide you through the next steps of your healthcare journey.
+        </p>
+
+        <a class="seo-btn"
+           href="{{ url_for('home', lang='en') }}#enquiry">
+            Start Medical Enquiry
+        </a>
+
+        {% endif %}
+
+    </section>
+
+
+    <footer class="seo-footer">
+        © 2026 NOORANIYAT Healthcare. Healthcare coordination and patient support services.
+    </footer>
+
+</div>
+
+</body>
+</html>
