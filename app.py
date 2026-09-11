@@ -85,10 +85,16 @@ def home():
         con.commit(); con.close()
         return render_template("success.html", name=name, lang=language)
     return render_template("home.html", lang=language)
+
 @app.route("/medical-treatment-in-india")
 def medical_treatment_india():
     language = get_lang()
     return render_template("medical_treatment_india.html", lang=language)
+
+@app.route("/medical-tourism-in-india")
+def medical_tourism_india():
+    language = get_lang()
+    return render_template("medical_tourism_in_india.html", lang=language)
 
 @app.route("/admin/login", methods=["GET","POST"])
 def login():
