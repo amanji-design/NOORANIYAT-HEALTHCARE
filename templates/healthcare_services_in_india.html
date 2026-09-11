@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="{{ 'ar' if lang == 'ar' else 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if lang == 'ar' %}
+    <title>خدمات الرعاية الصحية في الهند للمرضى الدوليين | Nooraniyat Healthcare</title>
+    <meta name="description" content="تعرّف على خدمات الرعاية الصحية والعلاج في الهند للمرضى الدوليين. تساعد Nooraniyat Healthcare في تنسيق الاستشارات والعلاج والمستشفيات والتقارير الطبية والتأشيرة والسفر.">
+    <link rel="canonical" href="{{ site_url }}/healthcare-services-in-india?lang=ar">
+    <meta property="og:title" content="خدمات الرعاية الصحية في الهند للمرضى الدوليين">
+    <meta property="og:description" content="دعم وتنسيق الرعاية الصحية والعلاج في الهند للمرضى الدوليين.">
+    {% else %}
+    <title>Healthcare Services in India for International Patients | Nooraniyat Healthcare</title>
+    <meta name="description" content="Explore healthcare services in India for international patients. Nooraniyat Healthcare helps coordinate specialist consultations, hospitals, treatment planning, medical reports, visa and travel support.">
+    <link rel="canonical" href="{{ site_url }}/healthcare-services-in-india?lang=en">
+    <meta property="og:title" content="Healthcare Services in India for International Patients">
+    <meta property="og:description" content="Healthcare coordination and international patient support for treatment in India.">
+    {% endif %}
+
+    <link rel="alternate" hreflang="en" href="{{ site_url }}/healthcare-services-in-india?lang=en">
+    <link rel="alternate" hreflang="ar" href="{{ site_url }}/healthcare-services-in-india?lang=ar">
+    <link rel="alternate" hreflang="x-default" href="{{ site_url }}/healthcare-services-in-india?lang=en">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nooraniyat Healthcare">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site_url }}/healthcare-services-in-india?lang={{ lang }}">
+    <meta property="og:site_name" content="Nooraniyat Healthcare">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+            background: #f7fafc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b5d68, #123d5a);
+            color: white;
+            padding: 75px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin: 0 0 18px;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+            opacity: .95;
+        }
+
+        .buttons {
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            margin: 6px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0b5d68;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        section {
+            padding: 55px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #123d5a;
+            font-size: 32px;
+            margin: 0 0 18px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .card h3 {
+            color: #0b5d68;
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #eaf7f8;
+        }
+
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            background: white;
+            padding: 25px 25px 25px 70px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.06);
+        }
+
+        .step:before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 22px;
+            top: 22px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #0b5d68;
+            color: white;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        .faq {
+            background: white;
+            padding: 22px;
+            margin: 12px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.05);
+        }
+
+        .faq h3 {
+            margin: 0 0 8px;
+            color: #123d5a;
+        }
+
+        .cta {
+            text-align: center;
+            background: #123d5a;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 55px 15px;
+            }
+
+            section {
+                padding: 42px 0;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h1>خدمات الرعاية الصحية في الهند للمرضى الدوليين</h1>
+        <p>
+            دعم وتنسيق طبي للمرضى من مختلف الدول الذين يرغبون في الحصول على الاستشارات
+            والعلاج والخدمات الصحية في الهند.
+        </p>
+        {% else %}
+        <h1>Healthcare Services in India for International Patients</h1>
+        <p>
+            Professional healthcare coordination and patient support for people from
+            different countries seeking consultations, treatment and healthcare services in India.
+        </p>
+        {% endif %}
+
+        <div class="buttons">
+            <a class="btn btn-primary" href="{{ url_for('home', lang=lang) }}#enquiry">
+                {% if lang == 'ar' %}إرسال تقرير طبي{% else %}Send Medical Report{% endif %}
+            </a>
+
+            <a class="btn btn-secondary" href="https://wa.me/{{ wa1 }}" target="_blank" rel="noopener">
+                {% if lang == 'ar' %}تواصل عبر واتساب{% else %}Contact on WhatsApp{% endif %}
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<section>
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>الرعاية الصحية والعلاج في الهند</h2>
+        <p class="intro">
+            تساعد Nooraniyat Healthcare المرضى الدوليين في تنظيم رحلة العلاج من خلال
+            تنسيق الاستشارات والتواصل مع المستشفيات والأطباء ومراجعة التقارير الطبية
+            والمساعدة في التخطيط للعلاج والخدمات المتعلقة بالسفر الطبي.
+        </p>
+        {% else %}
+        <h2>Healthcare and Treatment in India</h2>
+        <p class="intro">
+            Nooraniyat Healthcare supports international patients by helping coordinate
+            specialist consultations, communication with hospitals and doctors, medical
+            report review, treatment planning and medical travel-related assistance.
+        </p>
+        {% endif %}
+
+    </div>
+</section>
+
+<section class="highlight">
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>خدماتنا للمرضى الدوليين</h2>
+        {% else %}
+        <h2>Our Healthcare Services for International Patients</h2>
+        {% endif %}
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}تنسيق الاستشارات{% else %}Specialist Consultation Coordination{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في تنسيق المواعيد والاستشارات مع الأطباء المتخصصين وفق احتياجات المريض.
+                    {% else %}
+                    Assistance with coordinating consultations and appointments with appropriate medical specialists based on the patient's needs.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}مراجعة التقارير الطبية{% else %}Medical Report Review{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    يمكن للمرضى إرسال تقاريرهم الطبية لمراجعة المعلومات والمساعدة في تحديد الخطوات التالية.
+                    {% else %}
+                    Patients can share medical reports for review and assistance with understanding possible next steps.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}الرأي الطبي الثاني{% else %}Second Medical Opinion Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    دعم المرضى الذين يرغبون في الحصول على رأي طبي ثانٍ من متخصص مناسب.
+                    {% else %}
+                    Support for patients seeking an additional medical opinion from an appropriate specialist.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}تنسيق المستشفى{% else %}Hospital Coordination{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في التواصل والتنسيق مع المستشفيات ومراكز الرعاية الصحية المناسبة.
+                    {% else %}
+                    Assistance with communication and coordination with suitable hospitals and healthcare providers.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}خطة العلاج{% else %}Treatment Planning Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    تنظيم المعلومات والمواعيد والخطوات اللازمة قبل بدء رحلة العلاج.
+                    {% else %}
+                    Help organizing medical information, appointments and practical steps before treatment.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}تقدير التكلفة{% else %}Treatment Cost & Estimate Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في طلب تقديرات العلاج والتكاليف من الجهات الطبية ذات الصلة.
+                    {% else %}
+                    Assistance in requesting treatment estimates and cost information from relevant healthcare providers.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}المساعدة في التأشيرة{% else %}Medical Visa Assistance{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    دعم ومعلومات عملية متعلقة بالسفر الطبي وإجراءات التأشيرة.
+                    {% else %}
+                    Practical support and information related to medical travel and the medical visa process.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}دعم السفر{% else %}Medical Travel Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    المساعدة في تنظيم الجوانب العملية لرحلة المريض إلى الهند.
+                    {% else %}
+                    Assistance with practical arrangements connected with a patient's medical journey to India.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}دعم اللغة{% else %}Language Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    مساعدة لغوية للمرضى الدوليين لتسهيل التواصل أثناء رحلة العلاج.
+                    {% else %}
+                    Language support for international patients to make communication easier during their healthcare journey.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>{% if lang == 'ar' %}مساعدة المرضى على مدار الساعة{% else %}24/7 Patient Support{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    دعم المرضى ومساعدتهم خلال المراحل المختلفة من رحلة العلاج.
+                    {% else %}
+                    Dedicated patient assistance throughout different stages of the healthcare journey.
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>مجالات العلاج التي يمكن تنسيقها</h2>
+        {% else %}
+        <h2>Major Treatment Areas We Can Help Coordinate</h2>
+        {% endif %}
+
+        <div class="grid">
+
+            <div class="card"><h3>Cancer & Oncology</h3><p>Cancer consultation, oncology treatment coordination, surgery, chemotherapy, radiation, targeted therapy and immunotherapy support.</p></div>
+
+            <div class="card"><h3>Heart & Cardiology</h3><p>Cardiology consultation and coordination for cardiac evaluation, surgery and other heart-related treatments.</p></div>
+
+            <div class="card"><h3>Kidney & Urology</h3><p>Support for kidney, urology, urinary and related specialist consultations and treatment coordination.</p></div>
+
+            <div class="card"><h3>Liver & Gastroenterology</h3><p>Coordination support for liver, digestive system and gastroenterology-related healthcare needs.</p></div>
+
+            <div class="card"><h3>Orthopedic Care</h3><p>Support for joint, bone, spine, knee, hip and orthopedic consultations and procedures.</p></div>
+
+            <div class="card"><h3>Neurology & Neurosurgery</h3><p>Coordination support for neurological, brain and spine-related specialist care.</p></div>
+
+            <div class="card"><h3>IVF & Fertility</h3><p>Assistance with fertility consultations, IVF-related healthcare coordination and reproductive health services.</p></div>
+
+            <div class="card"><h3>Robotic & Minimally Invasive Surgery</h3><p>Support in finding and coordinating consultations for robotic and minimally invasive procedures where clinically appropriate.</p></div>
+
+            <div class="card"><h3>Transplant Care</h3><p>Coordination support for transplant-related consultations and treatment planning.</p></div>
+
+            <div class="card"><h3>Women's Healthcare</h3><p>Support for gynecology, women's health and related specialist consultations.</p></div>
+
+            <div class="card"><h3>Pediatric Care</h3><p>Assistance with specialist healthcare coordination for children and pediatric patients.</p></div>
+
+            <div class="card"><h3>Diagnostics & Second Opinion</h3><p>Support for diagnostic consultations, medical reports, investigations and second medical opinions.</p></div>
+
+        </div>
+    </div>
+</section>
+
+<section class="highlight">
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>كيف نساعد المرضى الدوليين؟</h2>
+        {% else %}
+        <h2>How We Help International Patients</h2>
+        {% endif %}
+
+        <div class="steps">
+
+            <div class="step">
+                <h3>{% if lang == 'ar' %}إرسال التقارير الطبية{% else %}Share Your Medical Reports{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    أرسل التقارير الطبية والوصفات والمعلومات الأساسية من خلال نموذج الاستفسار.
+                    {% else %}
+                    Share your medical reports, prescriptions and basic medical information through the enquiry form.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>{% if lang == 'ar' %}مراجعة الاحتياجات{% else %}Understand Your Healthcare Needs{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    نساعد في تنظيم المعلومات وتحديد نوع التخصص أو الاستشارة المطلوبة.
+                    {% else %}
+                    We help organize the information and identify the type of specialist consultation that may be required.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>{% if lang == 'ar' %}تنسيق الاستشارة{% else %}Coordinate Consultation{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    نساعد في تنسيق التواصل والمواعيد مع الجهات الطبية المناسبة.
+                    {% else %}
+                    We assist with communication and appointment coordination with relevant healthcare providers.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>{% if lang == 'ar' %}دعم رحلة العلاج{% else %}Support the Medical Journey{% endif %}</h3>
+                <p>
+                    {% if lang == 'ar' %}
+                    نقدم الدعم العملي المتعلق بالعلاج والسفر والتأشيرة والتواصل عند الحاجة.
+                    {% else %}
+                    We provide practical support related to treatment, travel, visa and communication where needed.
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>لماذا يختار المرضى الهند للعلاج؟</h2>
+        <p class="intro">
+            تستقبل الهند مرضى دوليين يبحثون عن مجموعة واسعة من التخصصات الطبية
+            والاستشارات والعلاجات. تختلف الخيارات والتكاليف حسب الحالة والطبيب
+            والمستشفى والخطة العلاجية.
+        </p>
+        {% else %}
+        <h2>Why Do International Patients Consider India for Healthcare?</h2>
+        <p class="intro">
+            India attracts international patients seeking a wide range of medical
+            specialties, consultations and treatment options. Healthcare choices and
+            costs vary according to the patient's condition, specialist, hospital and treatment plan.
+        </p>
+        {% endif %}
+
+    </div>
+</section>
+
+<section class="highlight">
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>الأسئلة الشائعة</h2>
+        {% else %}
+        <h2>Frequently Asked Questions</h2>
+        {% endif %}
+
+        <div class="faq">
+            <h3>Can international patients get healthcare treatment in India?</h3>
+            <p>
+                Yes. International patients can seek consultations and treatment in India.
+                Nooraniyat Healthcare can assist with coordination, communication and practical support.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>Can I send my medical reports before travelling to India?</h3>
+            <p>
+                Yes. Patients can submit relevant medical reports through the enquiry form
+                so that the required consultation or next steps can be coordinated.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>Can you help with a second medical opinion?</h3>
+            <p>
+                Nooraniyat Healthcare can assist patients who want to seek an additional
+                specialist opinion and coordinate the relevant consultation.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>Do you help international patients with medical travel?</h3>
+            <p>
+                Yes. We provide coordination and practical support related to medical
+                travel, including communication, treatment coordination and visa-related assistance.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>Can you provide an exact treatment cost?</h3>
+            <p>
+                Treatment costs depend on the patient's condition, investigations,
+                specialist, hospital and treatment plan. We can assist with requesting
+                relevant estimates from healthcare providers.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>Does Nooraniyat Healthcare itself provide medical treatment?</h3>
+            <p>
+                Nooraniyat Healthcare is a healthcare coordination and patient support
+                service. Medical diagnosis and treatment are provided by qualified doctors
+                and healthcare providers.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+
+        {% if lang == 'ar' %}
+        <h2>ابدأ رحلة العلاج في الهند</h2>
+        <p>أرسل تقريرك الطبي وسنساعدك في تنظيم الخطوات التالية.</p>
+        {% else %}
+        <h2>Start Your Healthcare Journey in India</h2>
+        <p>Share your medical report and let us help coordinate the next steps.</p>
+        {% endif %}
+
+        <div class="buttons">
+            <a class="btn btn-primary" href="{{ url_for('home', lang=lang) }}#enquiry">
+                {% if lang == 'ar' %}إرسال استفسار{% else %}Submit an Enquiry{% endif %}
+            </a>
+
+            <a class="btn btn-secondary" href="https://wa.me/{{ wa1 }}" target="_blank" rel="noopener">
+                WhatsApp
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © Nooraniyat Healthcare — Healthcare Coordination & International Patient Support
+    </div>
+</footer>
+
+</body>
+</html>

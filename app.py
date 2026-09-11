@@ -96,6 +96,11 @@ def medical_tourism_india():
     language = get_lang()
     return render_template("medical_tourism_in_india.html", lang=language)
 
+@app.route("/healthcare-services-in-india")
+def healthcare_services_in_india():
+    language = get_lang()
+    return render_template("healthcare_services_in_india.html", lang=language)
+
 @app.route("/admin/login", methods=["GET","POST"])
 def login():
     if request.method=="POST":
