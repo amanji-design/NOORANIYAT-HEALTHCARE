@@ -147,6 +147,10 @@ def sitemap():
     xml += f"<url><loc>{SITE_URL}/?lang=ar</loc></url>"
     xml += f"<url><loc>{SITE_URL}/medical-treatment-in-india?lang=en</loc></url>"
     xml += f"<url><loc>{SITE_URL}/medical-treatment-in-india?lang=ar</loc></url>"
+xml += f"<url><loc>{SITE_URL}/medical-tourism-in-india?lang=en</loc></url>"
+xml += f"<url><loc>{SITE_URL}/medical-tourism-in-india?lang=ar</loc></url>"
+xml += f"<url><loc>{SITE_URL}/healthcare-services-in-india?lang=en</loc></url>"
+xml += f"<url><loc>{SITE_URL}/healthcare-services-in-india?lang=ar</loc></url>"
     xml += "</urlset>"
     return make_response(xml,200,{"Content-Type":"application/xml"})
 
